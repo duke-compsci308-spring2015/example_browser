@@ -1,5 +1,4 @@
 import java.awt.Dimension;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -21,12 +20,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
+import javax.imageio.ImageIO;
 import org.controlsfx.dialog.Dialogs;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.EventTarget;
+
 
 /**
  * A class used to display the viewer for a simple HTML browser.
@@ -44,7 +45,8 @@ public class BrowserView {
     // constants
     public static final Dimension DEFAULT_SIZE = new Dimension(800, 600);
     public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-    public static final String PROTOCOL_PREFIX = "http://";
+    public static final String IMAGEFILE_SUFFIXES = 
+        String.format(".*\\.(%s)", String.join("|", ImageIO.getReaderFileSuffixes()));
     public static final String BLANK = " ";
 
     // scene, needed to report back to Application
@@ -87,14 +89,11 @@ public class BrowserView {
      * Display given URL.
      */
     public void showPage (String url) {
-        try {
-            if (url != null) {
-                // check for a valid URL before updating model, view
-                URL valid = new URL(completeURL(url));
-                myModel.go(valid);
-                update(valid);
-            }
-        } catch (MalformedURLException e) {
+        URL valid = myModel.go(url);
+        if (url != null) {
+            update(valid);
+        }
+        else {
             showError("Could not load " + url);
         }
     }
@@ -158,15 +157,6 @@ public class BrowserView {
             myModel.addFavorite(response.get());
             myFavorites.getItems().add(response.get());
         }
-    }
-
-    // deal with a potentially incomplete URL,
-    // e.g., let user leave off initial protocol
-    private String completeURL (String url) {
-        if (!url.startsWith(PROTOCOL_PREFIX)) {
-            return PROTOCOL_PREFIX + url;
-        }
-        return url;
     }
 
     // only enable buttons when useful to user
@@ -240,7 +230,7 @@ public class BrowserView {
     private Button makeButton (String property, EventHandler<ActionEvent> handler) {
         Button result = new Button();
         String label = myResources.getString(property);
-        if (label.endsWith("gif")) {
+        if (label.matches(IMAGEFILE_SUFFIXES)) {
             result.setGraphic(new ImageView(
                 new Image(getClass().getResourceAsStream(DEFAULT_RESOURCE_PACKAGE + label))));
         } else {
@@ -293,7 +283,7 @@ public class BrowserView {
                 Document doc = myPage.getEngine().getDocument();
                 NodeList nodes = doc.getElementsByTagName("a");
                 for (int i = 0; i < nodes.getLength(); i++) {
-                    EventTarget node = (EventTarget) nodes.item(i);
+                    EventTarget node = (EventTarget)nodes.item(i);
                     node.addEventListener(EVENT_CLICK, listener, false);
                     node.addEventListener(EVENT_MOUSEOVER, listener, false);
                     node.addEventListener(EVENT_MOUSEOUT, listener, false);
