@@ -1,0 +1,11 @@
+<map id="BrowserView.ShowPage.handle" name="BrowserView.ShowPage.handle">
+<area shape="rect" id="node2" href="$da/dc7/class_browser_view.html#ac654bf4a0eb91d6a9b1cf013e52fc3e5" title="BrowserView.showPage" alt="" coords="272,56,440,83"/>
+<area shape="rect" id="node3" href="$d4/d0e/class_browser_model.html#a16df284a0004c149f459b18876491b13" title="BrowserModel.go" alt="" coords="507,5,637,32"/>
+<area shape="rect" id="node6" href="$da/dc7/class_browser_view.html#a50820a4578ff7cacb849e7886aa75b13" title="BrowserView.showError" alt="" coords="488,56,656,83"/>
+<area shape="rect" id="node7" href="$da/dc7/class_browser_view.html#a34f643e815549bd4340fb49f0865c030" title="BrowserView.update" alt="" coords="497,107,647,133"/>
+<area shape="rect" id="node4" href="$d4/d0e/class_browser_model.html#afd48fe0bb4e912c2281ea18754fc8fe2" title="BrowserModel.completeURL" alt="" coords="704,5,904,32"/>
+<area shape="rect" id="node5" href="$d4/d0e/class_browser_model.html#a8543f3aac30c7f3970509c138f37bfa6" title="BrowserModel.hasNext" alt="" coords="964,56,1132,83"/>
+<area shape="rect" id="node8" href="$da/dc7/class_browser_view.html#a075eb442cd14dfdf391d474164cb5587" title="BrowserView.enableButtons" alt="" coords="705,107,903,133"/>
+<area shape="rect" id="node9" href="$d4/d0e/class_browser_model.html#aef138e6865de073292539cc36ed81d8d" title="BrowserModel.getHome" alt="" coords="961,107,1135,133"/>
+<area shape="rect" id="node10" href="$d4/d0e/class_browser_model.html#a1026df05417d496ec0630e7b76d9bc5c" title="BrowserModel.hasPrevious" alt="" coords="952,157,1144,184"/>
+</map>

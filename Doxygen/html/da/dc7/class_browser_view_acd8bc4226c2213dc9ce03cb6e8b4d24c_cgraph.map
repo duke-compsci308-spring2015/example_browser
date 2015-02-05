@@ -1,0 +1,8 @@
+<map id="BrowserView.next" name="BrowserView.next">
+<area shape="rect" id="node2" href="$d4/d0e/class_browser_model.html#af6ac28da81c98130778254d039fe3cbb" title="BrowserModel.next" alt="" coords="415,5,558,32"/>
+<area shape="rect" id="node4" href="$da/dc7/class_browser_view.html#a34f643e815549bd4340fb49f0865c030" title="BrowserView.update" alt="" coords="187,56,338,83"/>
+<area shape="rect" id="node3" href="$d4/d0e/class_browser_model.html#a8543f3aac30c7f3970509c138f37bfa6" title="BrowserModel.hasNext" alt="" coords="647,5,815,32"/>
+<area shape="rect" id="node5" href="$da/dc7/class_browser_view.html#a075eb442cd14dfdf391d474164cb5587" title="BrowserView.enableButtons" alt="" coords="387,56,586,83"/>
+<area shape="rect" id="node6" href="$d4/d0e/class_browser_model.html#aef138e6865de073292539cc36ed81d8d" title="BrowserModel.getHome" alt="" coords="643,56,818,83"/>
+<area shape="rect" id="node7" href="$d4/d0e/class_browser_model.html#a1026df05417d496ec0630e7b76d9bc5c" title="BrowserModel.hasPrevious" alt="" coords="635,107,827,133"/>
+</map>

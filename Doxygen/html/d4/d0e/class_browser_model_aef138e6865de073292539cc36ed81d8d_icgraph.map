@@ -1,0 +1,16 @@
+<map id="BrowserModel.getHome" name="BrowserModel.getHome">
+<area shape="rect" id="node2" href="$da/dc7/class_browser_view.html#a075eb442cd14dfdf391d474164cb5587" title="BrowserView.enableButtons" alt="" coords="230,252,429,279"/>
+<area shape="rect" id="node6" href="$da/dc7/class_browser_view.html#a27f780fabcdd2064805f4434fea1a495" title="BrowserView.home" alt="" coords="942,347,1085,373"/>
+<area shape="rect" id="node3" href="$da/dc7/class_browser_view.html#a5e87a7d2011460380dcf165db009461b" title="BrowserView.BrowserView" alt="" coords="1705,43,1890,69"/>
+<area shape="rect" id="node4" href="$da/dc7/class_browser_view.html#a34f643e815549bd4340fb49f0865c030" title="BrowserView.update" alt="" coords="478,207,629,233"/>
+<area shape="rect" id="node10" href="$da/dc7/class_browser_view.html#a5da1de68c05af5b4999d5169ea8a3cb1" title="BrowserView.makePreferences\lPanel" alt="" coords="1182,289,1399,330"/>
+<area shape="rect" id="node5" href="$da/dc7/class_browser_view.html#ac654bf4a0eb91d6a9b1cf013e52fc3e5" title="BrowserView.showPage" alt="" coords="677,233,845,260"/>
+<area shape="rect" id="node14" href="$da/dc7/class_browser_view.html#acd8bc4226c2213dc9ce03cb6e8b4d24c" title="BrowserView.next" alt="" coords="695,68,828,95"/>
+<area shape="rect" id="node15" href="$da/dc7/class_browser_view.html#a6936eb74671b8632e4e361fa00fc74df" title="BrowserView.back" alt="" coords="694,169,829,196"/>
+<area shape="rect" id="node9" href="$da/dc7/class_browser_view.html#a5eb25d6d929e3bf06fbc98aad4dfe990" title="BrowserView.showFavorite" alt="" coords="920,296,1107,323"/>
+<area shape="rect" id="node11" href="$de/dbe/class_browser_view_1_1_show_page.html#aa7fc8a1359d9b97a46932a60d385edf1" title="BrowserView.ShowPage.handle" alt="" coords="905,245,1122,272"/>
+<area shape="rect" id="node12" href="$d1/db7/class_browser_view_1_1_link_listener.html#ac327c216bc964212d29c574a5c9f4c9c" title="BrowserView.LinkListener.changed" alt="" coords="894,144,1133,171"/>
+<area shape="rect" id="node13" href="$d0/d4b/class_main.html#a6d9ee2db320148cdd46abd77f0f5c388" title="Main.start" alt="" coords="970,195,1057,221"/>
+<area shape="rect" id="node7" href="$da/dc7/class_browser_view.html#a857540bb858533e7a993f15225a56e79" title="BrowserView.makeNavigation\lPanel" alt="" coords="1186,86,1395,127"/>
+<area shape="rect" id="node8" href="$da/dc7/class_browser_view.html#a7187363a54226b91dcd71bfb90e60aa4" title="BrowserView.makeInputPanel" alt="" coords="1449,93,1655,120"/>
+</map>

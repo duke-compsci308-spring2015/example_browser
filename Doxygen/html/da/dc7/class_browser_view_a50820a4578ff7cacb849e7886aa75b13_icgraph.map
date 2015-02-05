@@ -1,0 +1,12 @@
+<map id="BrowserView.showError" name="BrowserView.showError">
+<area shape="rect" id="node2" href="$da/dc7/class_browser_view.html#ac654bf4a0eb91d6a9b1cf013e52fc3e5" title="BrowserView.showPage" alt="" coords="221,124,389,151"/>
+<area shape="rect" id="node3" href="$da/dc7/class_browser_view.html#a27f780fabcdd2064805f4434fea1a495" title="BrowserView.home" alt="" coords="486,19,629,45"/>
+<area shape="rect" id="node7" href="$da/dc7/class_browser_view.html#a5eb25d6d929e3bf06fbc98aad4dfe990" title="BrowserView.showFavorite" alt="" coords="464,73,651,100"/>
+<area shape="rect" id="node9" href="$de/dbe/class_browser_view_1_1_show_page.html#aa7fc8a1359d9b97a46932a60d385edf1" title="BrowserView.ShowPage.handle" alt="" coords="449,124,666,151"/>
+<area shape="rect" id="node10" href="$d1/db7/class_browser_view_1_1_link_listener.html#ac327c216bc964212d29c574a5c9f4c9c" title="BrowserView.LinkListener.changed" alt="" coords="438,175,677,201"/>
+<area shape="rect" id="node11" href="$d0/d4b/class_main.html#a6d9ee2db320148cdd46abd77f0f5c388" title="Main.start" alt="" coords="514,225,601,252"/>
+<area shape="rect" id="node4" href="$da/dc7/class_browser_view.html#a857540bb858533e7a993f15225a56e79" title="BrowserView.makeNavigation\lPanel" alt="" coords="730,5,939,46"/>
+<area shape="rect" id="node5" href="$da/dc7/class_browser_view.html#a7187363a54226b91dcd71bfb90e60aa4" title="BrowserView.makeInputPanel" alt="" coords="993,45,1199,72"/>
+<area shape="rect" id="node6" href="$da/dc7/class_browser_view.html#a5e87a7d2011460380dcf165db009461b" title="BrowserView.BrowserView" alt="" coords="1249,45,1434,72"/>
+<area shape="rect" id="node8" href="$da/dc7/class_browser_view.html#a5da1de68c05af5b4999d5169ea8a3cb1" title="BrowserView.makePreferences\lPanel" alt="" coords="726,70,943,111"/>
+</map>

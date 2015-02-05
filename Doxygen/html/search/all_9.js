@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['main',['Main',['../d0/d4b/class_main.html',1,'Main'],['../d0/d4b/class_main.html#a8a5d0f827edddff706cc0e6740d0579a',1,'Main.main()']]],
+  ['main_2ejava',['Main.java',['../d0/da5/_main_8java.html',1,'']]],
+  ['makebutton',['makeButton',['../da/dc7/class_browser_view.html#a9f7dc5ce97b315e98a3405f58a1f0e9e',1,'BrowserView']]],
+  ['makeinformationpanel',['makeInformationPanel',['../da/dc7/class_browser_view.html#ade0b50f306175b361fa8304880c1ef7b',1,'BrowserView']]],
+  ['makeinputfield',['makeInputField',['../da/dc7/class_browser_view.html#a2211cf8495fb203235dd74a4fe725ff4',1,'BrowserView']]],
+  ['makeinputpanel',['makeInputPanel',['../da/dc7/class_browser_view.html#a7187363a54226b91dcd71bfb90e60aa4',1,'BrowserView']]],
+  ['makenavigationpanel',['makeNavigationPanel',['../da/dc7/class_browser_view.html#a857540bb858533e7a993f15225a56e79',1,'BrowserView']]],
+  ['makepagedisplay',['makePageDisplay',['../da/dc7/class_browser_view.html#a4f4f3ad16f6bbf0171108ff2a11d7788',1,'BrowserView']]],
+  ['makepreferencespanel',['makePreferencesPanel',['../da/dc7/class_browser_view.html#a5da1de68c05af5b4999d5169ea8a3cb1',1,'BrowserView']]],
+  ['mybackbutton',['myBackButton',['../da/dc7/class_browser_view.html#ad59a7f1c3d4cd5c4e729cc20c372a7b9',1,'BrowserView']]],
+  ['mycurrentindex',['myCurrentIndex',['../d4/d0e/class_browser_model.html#ad9ba83e4905d5ee1144b80d2b31edc0e',1,'BrowserModel']]],
+  ['mycurrenturl',['myCurrentURL',['../d4/d0e/class_browser_model.html#a2e8593f43ed44dd30cb397a365c129f1',1,'BrowserModel']]],
+  ['myfavorites',['myFavorites',['../d4/d0e/class_browser_model.html#a6ab6f5c59ecfdd4850aaf75a30955206',1,'BrowserModel.myFavorites()'],['../da/dc7/class_browser_view.html#a8dec97bcf99f2f0ed9e29cd107f26de0',1,'BrowserView.myFavorites()']]],
+  ['myhistory',['myHistory',['../d4/d0e/class_browser_model.html#a84f82612e1d11fb4d84941927532de31',1,'BrowserModel']]],
+  ['myhome',['myHome',['../d4/d0e/class_browser_model.html#a4957234d4e41f7687c99cfd8e7409816',1,'BrowserModel']]],
+  ['myhomebutton',['myHomeButton',['../da/dc7/class_browser_view.html#ae56e747681a80de9a3edf58dcdbac767',1,'BrowserView']]],
+  ['mymodel',['myModel',['../da/dc7/class_browser_view.html#ab9c741ed97159125ba0b68c9664c1e94',1,'BrowserView']]],
+  ['mynextbutton',['myNextButton',['../da/dc7/class_browser_view.html#aff3a87a60732a12daf963e9887f17912',1,'BrowserView']]],
+  ['mypage',['myPage',['../da/dc7/class_browser_view.html#af408334be611f22424e34d451fc0b847',1,'BrowserView']]],
+  ['myresources',['myResources',['../da/dc7/class_browser_view.html#a8f73bdeb607ddcc369fd9f72e72bebde',1,'BrowserView']]],
+  ['myscene',['myScene',['../da/dc7/class_browser_view.html#ac489ef112b9a1ee1545f9575973f9d7d',1,'BrowserView']]],
+  ['mystatus',['myStatus',['../da/dc7/class_browser_view.html#a5fda528e2d068d390155fe9a48e85729',1,'BrowserView']]],
+  ['myurldisplay',['myURLDisplay',['../da/dc7/class_browser_view.html#a486b3ad41340ae9c893a3c9360dd98fa',1,'BrowserView']]]
+];
