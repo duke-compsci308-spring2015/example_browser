@@ -42,7 +42,9 @@ public class BrowserModel {
             myCurrentIndex++;
             return myHistory.get(myCurrentIndex);
         }
-        return null;
+        else {
+            throw new BrowserException("No next URL in history.");
+        }
     }
 
     /**
@@ -53,22 +55,27 @@ public class BrowserModel {
             myCurrentIndex--;
             return myHistory.get(myCurrentIndex);
         }
-        return null;
+        else {
+            throw new BrowserException("No previous URL in history.");
+        }
     }
 
     /**
      * Changes current page to given URL, removing next history.
      */
     public URL go (String url) {
-        myCurrentURL = completeURL(url);
-        if (myCurrentURL != null) {
+        try {
+            myCurrentURL = completeURL(url);
             if (hasNext()) {
                 myHistory = myHistory.subList(0, myCurrentIndex + 1);
             }
             myHistory.add(myCurrentURL);
             myCurrentIndex++;
+            return myCurrentURL;
         }
-        return myCurrentURL;
+        catch (MalformedURLException e) {
+            throw new BrowserException("Could not load %s", url);
+        }
     }
 
     /**
@@ -120,12 +127,13 @@ public class BrowserModel {
             return myFavorites.get(name);
         }
         else {
-            return null;
+            throw new BrowserException("Invalid favorites name: %s.", name);
         }
     }
 
     // deal with a potentially incomplete URL
-    private URL completeURL (String possible) {
+    private URL completeURL (String possible)
+        throws MalformedURLException {
         try {
             // try it as is
             return new URL(possible);
@@ -139,7 +147,8 @@ public class BrowserModel {
                     // e.g., let user leave off initial protocol
                     return new URL(PROTOCOL_PREFIX + possible);
                 } catch (MalformedURLException eee) {
-                    return null;
+                    // nothing else to do, let caller report error to user
+                    throw eee;
                 }
             }
         }
