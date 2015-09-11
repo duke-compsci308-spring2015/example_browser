@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 
 /**
@@ -14,6 +15,7 @@ import java.util.Map;
  */
 public class BrowserModel {
     // constants
+    public static final String DEFAULT_RESOURCES = "resources/Errors";
     public static final String PROTOCOL_PREFIX = "http://";
     // state
     private URL myHome;
@@ -21,6 +23,8 @@ public class BrowserModel {
     private int myCurrentIndex;
     private List<URL> myHistory;
     private Map<String, URL> myFavorites;
+    // get strings from resource file
+    private ResourceBundle myResources;
 
 
     /**
@@ -32,6 +36,8 @@ public class BrowserModel {
         myCurrentIndex = -1;
         myHistory = new ArrayList<>();
         myFavorites = new HashMap<>();
+        // use resources for errors
+        myResources = ResourceBundle.getBundle(DEFAULT_RESOURCES);
     }
 
     /**
@@ -43,7 +49,7 @@ public class BrowserModel {
             return myHistory.get(myCurrentIndex);
         }
         else {
-            throw new BrowserException("No next URL in history.");
+            throw new BrowserException(myResources.getString("NoNext"));
         }
     }
 
@@ -56,7 +62,7 @@ public class BrowserModel {
             return myHistory.get(myCurrentIndex);
         }
         else {
-            throw new BrowserException("No previous URL in history.");
+            throw new BrowserException(myResources.getString("NoPrevious"));
         }
     }
 
@@ -65,7 +71,11 @@ public class BrowserModel {
      */
     public URL go (String url) {
         try {
-            myCurrentURL = completeURL(url);
+            URL tmp = completeURL(url);
+            // unfortunately, completeURL may not have returned a valid URL, so test it
+            tmp.openStream();
+            // if successful, remember this URL
+            myCurrentURL = tmp;
             if (hasNext()) {
                 myHistory = myHistory.subList(0, myCurrentIndex + 1);
             }
@@ -73,8 +83,8 @@ public class BrowserModel {
             myCurrentIndex++;
             return myCurrentURL;
         }
-        catch (MalformedURLException e) {
-            throw new BrowserException("Could not load %s", url);
+        catch (Exception e) {
+            throw new BrowserException(e, myResources.getString("NoLoad"), url);
         }
     }
 
@@ -127,7 +137,7 @@ public class BrowserModel {
             return myFavorites.get(name);
         }
         else {
-            throw new BrowserException("Invalid favorites name: %s.", name);
+            throw new BrowserException(myResources.getString("BadFavorite"), name);
         }
     }
 

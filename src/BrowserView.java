@@ -10,10 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -21,7 +24,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebView;
 import javax.imageio.ImageIO;
-import org.controlsfx.dialog.Dialogs;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -115,7 +117,10 @@ public class BrowserView {
      * Display given message as an error in the GUI.
      */
     public void showError (String message) {
-        Dialogs.create().title(myResources.getString("ErrorTitle")).message(message).showError();
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle(myResources.getString("ErrorTitle"));
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     // move to the next URL in the history
@@ -147,12 +152,11 @@ public class BrowserView {
 
     // prompt user for name of favorite to add to collection
     private void addFavorite () {
-        Optional<String> response = 
-            Dialogs.create()
-                   .title(myResources.getString("FavoritePromptTitle"))
-                   .message(myResources.getString("FavoritePrompt")).showTextInput("");
-        // did user make a choice?
-        if (response.isPresent()) {
+        TextInputDialog input = new TextInputDialog("");
+        input.setTitle(myResources.getString("FavoritePromptTitle"));
+        input.setContentText(myResources.getString("FavoritePrompt"));
+        Optional<String> response = input.showAndWait();
+        if (response.isPresent()){
             myModel.addFavorite(response.get());
             myFavorites.getItems().add(response.get());
         }
@@ -191,6 +195,7 @@ public class BrowserView {
     private Node makeNavigationPanel () {
         HBox result = new HBox();
         // create buttons, with their associated actions
+        // old style way to do set up callback
         myBackButton = makeButton("BackCommand", new EventHandler<ActionEvent>() {
             @Override      
             public void handle (ActionEvent event) {       
@@ -198,6 +203,7 @@ public class BrowserView {
             }      
         });
         result.getChildren().add(myBackButton);
+        // old style way to do set up callback
         myNextButton = makeButton("NextCommand", event -> next());
         result.getChildren().add(myNextButton);
         myHomeButton = makeButton("HomeCommand", event -> home());
@@ -215,7 +221,7 @@ public class BrowserView {
         HBox result = new HBox();
         myFavorites = new ComboBox<String>();
         myFavorites.setPromptText(myResources.getString("FavoriteFirstItem"));
-        myFavorites.valueProperty().addListener( (o, s1, s2) -> showFavorite(s2));
+        myFavorites.valueProperty().addListener((o, s1, s2) -> showFavorite(s2));
         result.getChildren().add(makeButton("AddFavoriteCommand", event -> addFavorite()));
         result.getChildren().add(myFavorites);
         result.getChildren().add(makeButton("SetHomeCommand", event -> {
@@ -247,27 +253,29 @@ public class BrowserView {
         return result;
     }
 
-    // inner class to display pages
+    // very old style way create a callback (inner class to display pages)
     private class ShowPage implements EventHandler<ActionEvent> {
-        @Override      
-        public void handle (ActionEvent event) {       
-            showPage(myURLDisplay.getText());      
-        }      
+        @Override
+        public void handle (ActionEvent event) {
+            showPage(myURLDisplay.getText());
+        }
     }
 
 
     // Inner class to deal with link-clicks and mouse-overs Mostly taken from
     //   http://blogs.kiyut.com/tonny/2013/07/30/javafx-webview-addhyperlinklistener/
     private class LinkListener implements ChangeListener<State> {
+        public static final String HTML_LINK = "href";
         public static final String EVENT_CLICK = "click";
         public static final String EVENT_MOUSEOVER = "mouseover";
         public static final String EVENT_MOUSEOUT = "mouseout";
+        
 
         @Override
         public void changed (ObservableValue<? extends State> ov, State oldState, State newState) {
             if (newState == Worker.State.SUCCEEDED) {
                 EventListener listener = event -> {
-                    final String href = ((Element)event.getTarget()).getAttribute("href");
+                    final String href = ((Element)event.getTarget()).getAttribute(HTML_LINK);
                     if (href != null) {
                         String domEventType = event.getType();
                         if (domEventType.equals(EVENT_CLICK)) {
