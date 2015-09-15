@@ -47,6 +47,7 @@ public class BrowserView {
     // constants
     public static final Dimension DEFAULT_SIZE = new Dimension(800, 600);
     public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+    public static final String STYLESHEET = "default.css";
     public static final String IMAGEFILE_SUFFIXES = 
         String.format(".*\\.(%s)", String.join("|", ImageIO.getReaderFileSuffixes()));
     public static final String BLANK = " ";
@@ -85,6 +86,7 @@ public class BrowserView {
         enableButtons();
         // create scene to hold UI
         myScene = new Scene(root, DEFAULT_SIZE.width, DEFAULT_SIZE.height);
+        myScene.getStylesheets().add(DEFAULT_RESOURCE_PACKAGE + STYLESHEET);
     }
 
     /**
@@ -242,6 +244,7 @@ public class BrowserView {
             result.setText(label);
         }
         result.setOnAction(handler);
+        result.getStyleClass().add("button");
         return result;
     }
 
